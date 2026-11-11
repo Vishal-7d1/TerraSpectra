@@ -65,3 +65,4 @@ def calibrate_reflectance(raw_dn: np.ndarray, dark_ref: np.ndarray, white_ref: n
     denominator[denominator == 0] = 1e-6
     reflectance = (raw_dn - dark_ref) / denominator
     return np.clip(reflectance, 0.0, 1.0)
+

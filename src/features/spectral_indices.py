@@ -90,3 +90,4 @@ def extract_vegetation_indices(band_dict: Dict[str, np.ndarray]) -> pd.DataFrame
         features["PSRI"] = calculate_psri(band_dict["red"], band_dict["blue"], band_dict["nir"])
 
     return pd.DataFrame(features)
+

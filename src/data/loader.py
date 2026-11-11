@@ -35,3 +35,4 @@ def load_spectral_data(file_path: Union[str, Path]) -> Union[pd.DataFrame, Tuple
         return mat
     else:
         raise ValueError(f"Unsupported format '{suffix}'. Supported: .csv, .npy, .mat")
+
