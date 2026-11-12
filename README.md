@@ -1,120 +1,153 @@
 # 🌾 TerraSpectra: Hyperspectral Crop Disease Forecasting
 
-[![Python Version](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11-blue.svg)](https://www.python.org/)
 [![Domain](https://img.shields.io/badge/Domain-Data%20Science%20%26%20Machine%20Learning-green.svg)]()
-[![Internship](https://img.shields.io/badge/Infotact%20Solutions-Internship%20Project-orange.svg)]()
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)]()
+[![Language](https://img.shields.io/badge/Language-Python%203.10%2B-blue.svg)]()
+[![Framework](https://img.shields.io/badge/UI-Streamlit-red.svg)]()
+[![Status](https://img.shields.io/badge/Status-Project%20Structure%20Initialized-orange.svg)]()
 
 ---
 
-## 📌 Project Overview
+## 📖 1. Project Introduction
 
-**TerraSpectra** is an end-to-end Machine Learning and Remote Sensing framework engineered to detect, classify, and forecast crop diseases before visible symptoms manifest to the human eye. 
+**TerraSpectra** is a specialized Data Science and Machine Learning project focused on agricultural remote sensing and plant pathology. Traditional optical RGB photography captures only broad visible light (Red, Green, Blue) and frequently fails to identify crop diseases until visual foliar lesions (chlorosis and necrosis) become prominent—by which point irreversible yield damage and pathogen propagation have occurred.
 
-Unlike standard digital cameras (which only capture broad Red, Green, and Blue bands), **Hyperspectral Imaging (HSI)** records hundreds of continuous, narrow spectral bands across the **VNIR (Visible & Near-Infrared: 400–1000 nm)** and **SWIR (Short-Wave Infrared: 1000–2500 nm)** spectrum. 
-
-By analyzing microscopic changes in leaf chlorophyll content, water absorption, and cellular scattering, **TerraSpectra** identifies pre-symptomatic physiological stress in plants, enabling early intervention, localized fungicide applications, and significant reductions in crop loss.
+**Hyperspectral Imaging (HSI)** overcomes this limitation by capturing continuous, narrow spectral bands spanning the **Visible and Near-Infrared (VNIR: 400nm – 1000nm)** and **Short-Wave Infrared (SWIR: 1000nm – 2500nm)** spectrum. TerraSpectra aims to analyze these narrow-band spectral signatures to identify physiological and biochemical plant changes (such as chlorophyll breakdown, water stress, and cell wall degradation) for **early, pre-symptomatic crop disease detection and forecasting**.
 
 ---
 
-## 👨‍💻 Project Metadata & Internship Details
+## 🎯 2. Project Objective
 
-| Parameter | Details |
-| :--- | :--- |
-| **Intern Name** | **Vishal Yadav** |
-| **Role** | Data Associate L1. Intern |
-| **Domain** | Data Science & Machine Learning |
-| **Organization** | **Infotact Solutions** (Electronic City, Bengaluru) |
-| **Reference No.** | `ITS/DSML/1590` |
-| **Internship Duration** | 3 Months |
-| **Project Timeline** | **10 November 2026 – 10 December 2026** (1 Month) |
-| **Email** | `vyadav276203@gmail.com` |
+The primary objective of **TerraSpectra** is to develop a modular, end-to-end Machine Learning pipeline that:
+1. Ingests and standardizes hyperspectral crop reflectance data.
+2. Performs radiometric calibration, noise reduction, and spectral baseline analysis.
+3. Conducts rigorous Exploratory Data Analysis (EDA) on spectral signatures of healthy vs. infected crops.
+4. Extracts domain-specific spectral vegetation indices (e.g., NDVI, NDRE, PRI, PSRI) and performs dimensionality reduction.
+5. Designs, trains, benchmarks, and evaluates machine learning classifiers to predict disease categories and severity stages.
+6. Builds a disease prediction system and an interactive frontend dashboard for agronomists and decision-makers.
+7. Produces comprehensive project documentation, reports, and presentation deliverables.
 
 ---
 
-## 🔬 Core Science: Why Hyperspectral Imaging?
+## 🔭 3. Project Scope
 
-```
-[ Incident Solar Radiation ]
-             │
-             ▼
-    ┌─────────────────┐
-    │  Plant Foliage  │
-    └────────┬────────┘
-             │
-    ┌────────┴───────────────────────────┐
-    ▼                                    ▼
-[ Healthy Leaf ]                  [ Diseased / Stressed Leaf ]
-- High Chlorophyll Absorption     - Chlorophyll Degradation (Red reflectance ↑)
-  (Low Red Reflectance ~670nm)    - Internal Cell Collapse (NIR reflectance ↓)
-- Strong Cellular Scattering      - Blue-shift of the "Red Edge" (700-740nm)
-  (High NIR Reflectance ~800nm)   - Altered Xanthophyll Cycle (PRI shift ~531nm)
-```
-
-By computing narrow-band **Spectral Vegetation Indices**:
-- **NDRE (Normalized Difference Red Edge):** Detects early chlorosis before necrosis occurs.
-- **PRI (Photochemical Reflectance Index):** Monitors photosynthetic efficiency changes.
-- **PSRI (Plant Senescence Reflectance Index):** Tracks cell breakdown and senescence.
-- **NDVI / GNDVI:** Measures biomass vigor and canopy density.
+- **Data Handling:** Collection, organization, and validation of real-world agricultural hyperspectral datasets (or standard benchmark cubes/spectral libraries).
+- **Preprocessing:** Savitzky-Golay filtering, Standard Normal Variate (SNV) transformation, continuum removal, and removal of noisy atmospheric water absorption bands.
+- **Spectral Analysis:** Quantitative evaluation of the "Red-Edge" shift (690nm–740nm) and NIR reflectance plateau dynamics.
+- **Feature Engineering:** Calculation of narrow-band vegetation indices, Principal Component Analysis (PCA), and feature selection.
+- **Machine Learning Modeling:** Supervised classification and staging using algorithms such as Random Forest, Support Vector Machines (SVM), and Gradient Boosting.
+- **Diagnostic System:** Real-time inference pipeline translating raw spectral measurements into risk levels and actionable agronomic prescriptions.
+- **Frontend Dashboard:** Interactive visualization tool built with Streamlit for spectral signature exploration and crop health diagnosis.
 
 ---
 
-## 📂 Project Directory Structure
+## 🛠️ 4. Technology Stack
 
-```plaintext
+- **Core Programming Language:** Python 3.10+
+- **Data Manipulation & Scientific Computing:** NumPy, Pandas, SciPy
+- **Hyperspectral Processing:** Spectral Python (SPy)
+- **Machine Learning & Modeling:** Scikit-Learn
+- **Data Visualization & Analytics:** Matplotlib, Seaborn
+- **Interactive Prototyping:** Jupyter Notebook / JupyterLab
+- **Frontend Application:** Streamlit
+- **Version Control:** Git & GitHub
+
+---
+
+## 📂 5. Project Structure
+
+The project follows a clean, modular, and sequential numbering hierarchy inspired by industry best practices:
+
+```text
 TerraSpectra/
 │
-├── .gitignore                     # Git ignore rules for datasets, logs, virtualenvs
-├── README.md                      # Comprehensive project documentation
-├── requirements.txt               # Python package dependencies
-├── app.py                         # Interactive Streamlit Web Demonstration
+├── .venv/                              # Python Virtual Environment
 │
-├── data/                          # Data store (ignored in git except .gitkeep)
-│   ├── raw/                       # Original hyperspectral cubes (.mat, .hdr, .tif, .csv)
-│   ├── processed/                 # Denoised, normalized, and calibrated spectral datasets
-│   └── external/                  # Reference spectral signatures & benchmark databases
+├── 01_Dataset_Collection/              # Data ingestion and raw/processed repository
+│   ├── raw_data/                       # Unmodified, original hyperspectral datasets
+│   ├── processed_data/                 # Cleaned and standardized spectral matrices
+│   ├── dataset_analysis.py             # Dataset validation and integrity audit script
+│   └── README.md                       # Module documentation
 │
-├── notebooks/                     # Exploratory Data Analysis & Prototyping
-│   ├── README.md
-│   ├── 01_eda_spectral_signatures.py
-│   ├── 02_preprocessing_and_indices.py
-│   └── 03_model_prototyping.py
+├── 02_Data_Preprocessing/              # Signal processing, filtering, and calibration
+│   ├── data_cleaning.py                # Outlier detection and missing value handling
+│   ├── normalization.py                # SNV and radiometric reflectance normalization
+│   ├── preprocessing.py                # Main preprocessing pipeline (Savitzky-Golay, etc.)
+│   └── README.md                       # Module documentation
 │
-├── src/                           # Modular production source code
-│   ├── __init__.py
-│   ├── data/                      # Ingestion & radiometric calibration
-│   │   ├── __init__.py
-│   │   ├── loader.py              # Multiformat dataset loader (.csv, .mat, .npy)
-│   │   └── preprocess.py          # Savitzky-Golay filter, SNV, bad-band removal
-│   │
-│   ├── features/                  # Spectral feature engineering
-│   │   ├── __init__.py
-│   │   └── spectral_indices.py    # Narrow-band index computation (NDVI, NDRE, PRI, PSRI)
-│   │
-│   ├── models/                    # ML / DL pipelines
-│   │   ├── __init__.py
-│   │   ├── architectures.py       # RF, SVM, XGBoost, and 1D-CNN spectral pipelines
-│   │   ├── train.py               # Model training, hyperparameter search, validation
-│   │   └── predict.py             # Inference pipeline & disease probability scoring
-│   │
-│   └── utils/                     # Helper modules
-│       ├── __init__.py
-│       └── visualizer.py          # Spectral signature plotting, confusion matrix, ROC
+├── 03_Exploratory_Data_Analysis/       # Spectral analytics and visualization
+│   ├── eda.py                          # Statistical distributions and exploratory plots
+│   ├── spectral_analysis.py            # Spectral reflectance curves and Red-Edge derivative analysis
+│   ├── outputs/                        # Saved EDA figures, plots, and charts
+│   └── README.md                       # Module documentation
 │
-├── models/                        # Serialized model weights & scalers (.pkl, .joblib, .pt)
-├── reports/                       # Generated evaluation outputs & figures
-│   └── figures/                   # Confusion matrix plots, spectral curve comparisons
+├── 04_Feature_Engineering/             # Spectral index calculation & dimensionality reduction
+│   ├── feature_extraction.py           # Narrow-band vegetation indices (NDVI, NDRE, PRI, PSRI)
+│   ├── feature_selection.py            # PCA and band importance ranking
+│   └── README.md                       # Module documentation
 │
-└── docs/                          # Internship deliverables & documentation
-    ├── project_report.md          # Comprehensive formal project report draft
-    └── presentation_outline.md    # Presentation (PPT) slide-by-slide structure
+├── 05_Machine_Learning/                # Model development, cross-validation & evaluation
+│   ├── train.py                        # Model training and hyperparameter optimization
+│   ├── evaluate.py                     # Evaluation metrics, confusion matrix, ROC-AUC
+│   ├── models/                         # Serialized model checkpoints (.joblib, .pkl)
+│   ├── outputs/                        # Evaluation plots, benchmark comparisons, metric reports
+│   └── README.md                       # Module documentation
+│
+├── 06_Prediction_System/               # Inference engine and risk assessment
+│   ├── predict.py                      # Prediction service for incoming spectral vectors
+│   └── README.md                       # Module documentation
+│
+├── 07_Frontend_Dashboard/              # User interface and interactive demo
+│   ├── app.py                          # Streamlit web application
+│   └── README.md                       # Module documentation
+│
+├── 08_Final_Deliverables/              # Formal documentation and submission files
+│   ├── Project_Report/                 # Comprehensive project report
+│   ├── PPT/                            # Presentation slides and review deck
+│   ├── Documentation/                  # Technical system architecture and user guides
+│   ├── Evaluation_Results/             # Summary of final model metrics and benchmarks
+│   └── README.md                       # Module documentation
+│
+├── .gitignore                          # Git ignore rules
+├── README.md                           # Master project documentation
+└── requirements.txt                    # Project dependency specification
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🔄 6. Development Workflow
 
-### 1. Clone & Navigate
+The project is structured to proceed in sequential phases:
+
+```
+[ Phase 01: Dataset Collection ]
+       │
+       ▼
+[ Phase 02: Data Preprocessing & Calibration ]
+       │
+       ▼
+[ Phase 03: Exploratory & Spectral Analysis ]
+       │
+       ▼
+[ Phase 04: Feature Engineering & PCA ]
+       │
+       ▼
+[ Phase 05: Machine Learning Model Training ]
+       │
+       ▼
+[ Phase 06: Disease Prediction Pipeline ]
+       │
+       ▼
+[ Phase 07: Frontend Dashboard Deployment ]
+       │
+       ▼
+[ Phase 08: Final Deliverables & Reporting ]
+```
+
+---
+
+## 💻 7. Installation Instructions
+
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/vyadav276203/TerraSpectra.git
 cd TerraSpectra
@@ -123,58 +156,31 @@ cd TerraSpectra
 ### 2. Set Up Virtual Environment
 ```bash
 # Windows (PowerShell)
-python -m venv venv
-.\venv\Scripts\Activate.ps1
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 
 # Linux / macOS
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 3. Install Initial Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run Interactive Demo Dashboard
-```bash
-streamlit run app.py
-```
-
 ---
 
-## 🎯 Project Roadmap & Deliverables (Infotact Solutions)
+## 📌 8. Project Status
 
-As specified in the **Infotact Solutions Project Assignment Letter (`Ref: ITS/DSML/1590`)**:
-
-| Phase | Duration | Scope & Deliverable | Status |
-| :---: | :---: | :--- | :---: |
-| **Phase 1** | Week 1 (10 Nov – 17 Nov) | Project Setup, Architecture Design, Dataset Acquisition & Literature Review | 🟡 In Progress |
-| **Phase 2** | Week 2 (18 Nov – 24 Nov) | Exploratory Data Analysis (EDA), Radiometric Calibration, Spectral Index Extraction | ⚪ Pending |
-| **Phase 3** | Week 3 (25 Nov – 01 Dec) | Model Training (RF, SVM, 1D-CNN), Cross-Validation & Metric Optimization | ⚪ Pending |
-| **Phase 4** | Week 4 (02 Dec – 10 Dec) | Demonstration App, Final Report (`project_report.md`), PPT (`presentation_outline.md`), Code Review | ⚪ Pending |
-
-### Required Submission Deliverables:
-1. **Source Code:** Modular `src/` codebase with version control.
-2. **Project Documentation:** Complete `README.md` and module docstrings.
-3. **Project Report:** Documented methodology in `docs/project_report.md`.
-4. **Presentation (PPT):** Slide structure ready in `docs/presentation_outline.md`.
-5. **Model Evaluation Results:** Confusion matrices, F1-scores, accuracy curves.
-6. **Final Project Demonstration:** Interactive web app via `streamlit run app.py`.
-
----
-
-## 📊 Evaluation Metrics
-
-Models are evaluated on balanced and imbalanced test splits using:
-- **Accuracy & Balanced Accuracy**
-- **Precision, Recall, Weighted F1-Score**
-- **Cohen's Kappa ($\kappa$)** (Standard for remote sensing classification)
-- **Confusion Matrix & ROC-AUC curves**
-
----
-
-## 📜 Compliance & Confidentiality
-
-This project is developed as part of an official internship assignment at **Infotact Solutions**. All methodologies, source files, and documents adhere to academic integrity, confidentiality, and anti-plagiarism guidelines.
-
+- [x] Project architecture and folder hierarchy established.
+- [x] Module-level documentation initialized.
+- [x] Virtual environment and dependency specifications configured.
+- [ ] Phase 1: Real dataset selection and acquisition (Pending next instructions).
+- [ ] Phase 2: Data preprocessing and spectral filtering (Pending).
+- [ ] Phase 3: Exploratory spectral curve analysis (Pending).
+- [ ] Phase 4: Feature extraction & index computation (Pending).
+- [ ] Phase 5: Machine Learning modeling and validation (Pending).
+- [ ] Phase 6: Inference pipeline implementation (Pending).
+- [ ] Phase 7: Streamlit frontend dashboard (Pending).
+- [ ] Phase 8: Final report and presentation preparation (Pending).

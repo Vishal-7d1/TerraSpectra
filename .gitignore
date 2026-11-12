@@ -24,9 +24,9 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual environments
-venv/
+# Virtual Environments
 .venv/
+venv/
 env/
 ENV/
 env.bak/
@@ -36,24 +36,24 @@ venv.bak/
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-# IDE and Editor configs
+# IDEs and Code Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Large datasets and model weights (keep folder structure via .gitkeep)
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-data/external/*
-!data/external/.gitkeep
-models/*
-!models/.gitkeep
+# Large datasets & binary files (keep raw_data directory structure)
+01_Dataset_Collection/raw_data/*
+!01_Dataset_Collection/raw_data/.gitkeep
+01_Dataset_Collection/processed_data/*
+!01_Dataset_Collection/processed_data/.gitkeep
 
-# Logs and outputs
-*.log
-logs/
+# Model weights and artifacts
+05_Machine_Learning/models/*
+!05_Machine_Learning/models/.gitkeep
+
+# System & temporary files
 .DS_Store
-
+Thumbs.db
+*.log
+tmp/
