@@ -1,0 +1,7 @@
+# Ignore logs and temporary files in this module
+logs/*.log
+*.tmp
+*.temp
+__pycache__/
+.pytest_cache/
+

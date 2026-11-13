@@ -1,0 +1,14 @@
+{
+  "dataset_id": "DS_WHEAT_CROWN_ROT_001",
+  "dataset_name": "Hyperspectral Imaging for Early Detection of Crown Rot in Wheat",
+  "file_name": "data_AgEng_review_paper.xlsx",
+  "local_path": "raw_data\\hyperspectral\\data_AgEng_review_paper.xlsx",
+  "source_url": "https://ndownloader.figshare.com/files/31569671",
+  "doi": "10.25909/17075138",
+  "download_timestamp": "2026-11-13T18:09:58.780305",
+  "download_duration_seconds": 28.28,
+  "file_size_bytes": 13333673,
+  "file_size_human": "12.7 MB",
+  "sha256_checksum": "3852e08d8decb17bfd032d36bb4ce17fee347f9f72ff6456f2b096b9d406a105",
+  "status": "DOWNLOADED_AND_VERIFIED"
+}

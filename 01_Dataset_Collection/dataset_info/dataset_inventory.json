@@ -1,0 +1,66 @@
+{
+  "inventory_generated_at": "2026-11-13T18:11:41.207687",
+  "total_datasets": 1,
+  "total_raw_files": 2,
+  "total_raw_size_bytes": 13334408,
+  "total_raw_size_human": "12.7 MB",
+  "file_formats": {
+    ".md": 1,
+    ".xlsx": 1
+  },
+  "primary_dataset_details": {
+    "file_name": "data_AgEng_review_paper.xlsx",
+    "total_samples": 1632,
+    "total_columns": 667,
+    "metadata_columns_count": 14,
+    "metadata_columns": [
+      "Unnamed: 0",
+      "barcode",
+      "Plant Species",
+      "Replicate",
+      "Lane",
+      "Position",
+      "disease",
+      "watering",
+      "genotype ID",
+      "value",
+      "swir",
+      "vnir",
+      "date-time",
+      "dead"
+    ],
+    "spectral_bands_count": 653,
+    "wavelength_min_nm": 450.82,
+    "wavelength_max_nm": 2396.54,
+    "plant_species_distribution": {
+      "Triticum aestivum": 1224,
+      "Triticum durum": 408
+    },
+    "disease_label_distribution": {
+      "Infected": 816,
+      "Control": 816
+    },
+    "watering_condition_distribution": {
+      "Drought": 816,
+      "Well-watered": 816
+    },
+    "metadata_null_counts": {
+      "Unnamed: 0": 0,
+      "barcode": 0,
+      "Plant Species": 0,
+      "Replicate": 0,
+      "Lane": 0,
+      "Position": 0,
+      "disease": 0,
+      "watering": 0,
+      "genotype ID": 0,
+      "value": 0,
+      "swir": 0,
+      "vnir": 0,
+      "date-time": 0,
+      "dead": 1459
+    },
+    "spectral_nan_count": 0
+  },
+  "collection_validation_status": "VALID_AND_READY_FOR_PREPROCESSING"
+}

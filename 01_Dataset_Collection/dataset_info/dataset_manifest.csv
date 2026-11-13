@@ -1,0 +1,3 @@
+file_id,file_name,relative_path,data_tier,format,size_bytes,size_human,sha256,last_modified
+FILE_0001,README.md,raw_data/README.md,raw_data,.md,735,735.0 B,7feffe4b923e794eb587aab1ba9e1f1a74804cfdd4959375937404a6e8856e0a,2026-11-13T18:08:05.478689
+FILE_0002,data_AgEng_review_paper.xlsx,raw_data/hyperspectral/data_AgEng_review_paper.xlsx,raw_data,.xlsx,13333673,12.7 MB,3852e08d8decb17bfd032d36bb4ce17fee347f9f72ff6456f2b096b9d406a105,2026-11-13T18:09:58.763748

@@ -1,0 +1,34 @@
+{
+  "validation_timestamp": "2026-11-13T18:10:49.316958",
+  "target_file": "raw_data\\hyperspectral\\data_AgEng_review_paper.xlsx",
+  "file_validation": {
+    "file_name": "data_AgEng_review_paper.xlsx",
+    "exists": true,
+    "is_file": true,
+    "size_bytes": 13333673,
+    "extension": ".xlsx",
+    "status": "VALID",
+    "issues": []
+  },
+  "hyperspectral_validation": {
+    "file_name": "data_AgEng_review_paper.xlsx",
+    "format": ".xlsx",
+    "total_samples": 1632,
+    "total_columns": 667,
+    "spectral_bands_count": 653,
+    "wavelength_min_nm": 450.82,
+    "wavelength_max_nm": 2396.54,
+    "nan_count": 0,
+    "infinite_count": 0,
+    "min_reflectance": 0.0,
+    "max_reflectance": 0.478,
+    "classes_detected": {
+      "Infected": 816,
+      "Control": 816
+    },
+    "missing_labels_count": 0,
+    "status": "VALID",
+    "notes": []
+  },
+  "overall_status": "VALID"
+}

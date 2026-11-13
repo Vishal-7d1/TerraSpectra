@@ -1,0 +1,14 @@
+{
+  "raw_data/README.md": {
+    "file_name": "README.md",
+    "sha256": "7feffe4b923e794eb587aab1ba9e1f1a74804cfdd4959375937404a6e8856e0a",
+    "size_bytes": 735,
+    "calculated_at": "2026-11-13T18:11:13.496987"
+  },
+  "raw_data/hyperspectral/data_AgEng_review_paper.xlsx": {
+    "file_name": "data_AgEng_review_paper.xlsx",
+    "sha256": "3852e08d8decb17bfd032d36bb4ce17fee347f9f72ff6456f2b096b9d406a105",
+    "size_bytes": 13333673,
+    "calculated_at": "2026-11-13T18:11:13.511036"
+  }
+}
