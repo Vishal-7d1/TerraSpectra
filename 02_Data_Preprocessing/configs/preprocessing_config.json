@@ -1,0 +1,52 @@
+{
+  "pipeline_name": "TerraSpectra_Hyperspectral_Preprocessing",
+  "version": "1.0.0",
+  "input": {
+    "raw_dataset_path": "../01_Dataset_Collection/raw_data/hyperspectral/data_AgEng_review_paper.xlsx",
+    "sheet_name": "barcode_hypdata",
+    "label_column": "disease",
+    "sample_id_column": "barcode"
+  },
+  "cleaning": {
+    "enabled": true,
+    "handle_missing_values": true,
+    "missing_strategy": "linear_spectral_interpolation",
+    "detect_duplicates": true,
+    "remove_duplicates": false,
+    "detect_outliers": true,
+    "outlier_method": "iqr",
+    "outlier_threshold": 2.5,
+    "validate_reflectance_range": true,
+    "min_allowed_reflectance": 0.0,
+    "max_allowed_reflectance": 1.0
+  },
+  "noise_reduction": {
+    "enabled": true,
+    "method": "savitzky_golay",
+    "sg_window_length": 11,
+    "sg_polyorder": 2,
+    "mask_water_absorption_bands": false,
+    "water_absorption_intervals_nm": [
+      [1350.0, 1420.0],
+      [1800.0, 1950.0]
+    ]
+  },
+  "normalization": {
+    "enabled": true,
+    "method": "snv",
+    "fit_train_only": true,
+    "train_ratio": 0.8,
+    "random_seed": 42
+  },
+  "quality_control": {
+    "enabled": true,
+    "max_allowed_distortion_rmse": 0.05,
+    "min_correlation_threshold": 0.98
+  },
+  "output": {
+    "base_output_dir": "outputs",
+    "save_csv": true,
+    "save_parquet": true,
+    "generate_visualizations": true
+  }
+}
