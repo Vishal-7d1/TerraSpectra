@@ -1,0 +1,91 @@
+{
+  "pipeline_name": "TerraSpectra_Hyperspectral_Preprocessing",
+  "execution_timestamp": "2026-11-15T06:47:02.604656",
+  "execution_duration_seconds": 24.06,
+  "input_dataset": "data_AgEng_review_paper.xlsx",
+  "total_samples": 1632,
+  "total_spectral_bands": 653,
+  "wavelength_bounds_nm": [
+    450.82,
+    2396.54
+  ],
+  "cleaning": {
+    "actions_taken": [
+      "No missing/invalid values detected."
+    ],
+    "audit_before": {
+      "total_elements": 1065696,
+      "nan_count": 0,
+      "nan_percentage": 0.0,
+      "inf_count": 0,
+      "negative_count": 0,
+      "over_max_count": 0,
+      "is_clean": true
+    }
+  },
+  "water_absorption": {
+    "masked_band_count": 0
+  },
+  "noise_reduction": {
+    "method": "savitzky_golay",
+    "window_length": 11,
+    "polyorder": 2,
+    "initial_noise_proxy_sigma": 0.000977,
+    "final_noise_proxy_sigma": 0.000208,
+    "noise_reduction_percentage": 78.71
+  },
+  "normalization": {
+    "method": "snv",
+    "fitted_scaler": "outputs\\normalized_data\\fitted_scaler.joblib"
+  },
+  "quality_control": {
+    "overall_status": "PASSED",
+    "sample_counts": {
+      "raw_samples": 1632,
+      "processed_samples": 1632,
+      "samples_preserved": true
+    },
+    "spectral_band_counts": {
+      "raw_bands": 653,
+      "processed_bands": 653
+    },
+    "label_integrity": {
+      "labels_aligned": true
+    },
+    "numerical_stability": {
+      "nan_count": 0,
+      "inf_count": 0,
+      "is_stable": true
+    },
+    "spectral_fidelity": {
+      "spectral_rmse": 0.001088,
+      "mean_pearson_correlation": 0.999778,
+      "fidelity_passed": true
+    },
+    "distribution_comparison": {
+      "raw_statistics": {
+        "min": 0.0,
+        "max": 0.478,
+        "mean": 0.1294,
+        "std": 0.1049
+      },
+      "processed_statistics": {
+        "min": -0.0389,
+        "max": 0.5048,
+        "mean": 0.1294,
+        "std": 0.1048
+      }
+    }
+  },
+  "saved_artifacts": {
+    "cleaned_data": {
+      "csv": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\cleaned_data\\cleaned_spectral_data.csv",
+      "parquet": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\cleaned_data\\cleaned_spectral_data.parquet"
+    },
+    "normalized_data": {
+      "csv": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\normalized_data\\normalized_spectral_data.csv",
+      "parquet": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\normalized_data\\normalized_spectral_data.parquet"
+    }
+  },
+  "status": "SUCCESS"
+}

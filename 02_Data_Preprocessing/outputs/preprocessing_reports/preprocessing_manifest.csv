@@ -1,0 +1,6 @@
+artifact,folder,size_bytes
+cleaned_spectral_data.csv,cleaned_data,19284141
+cleaned_spectral_data.parquet,cleaned_data,9351989
+normalized_spectral_data.csv,normalized_data,19184022
+normalized_spectral_data.parquet,normalized_data,9492092
+fitted_scaler.joblib,normalized_data,130
