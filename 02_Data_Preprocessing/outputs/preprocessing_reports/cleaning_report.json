@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-11-15T06:47:44.147101",
+  "input_dataset": "data_AgEng_review_paper.xlsx",
+  "total_samples": 1632,
+  "total_spectral_bands": 653,
+  "duplicate_sample_count": 1424,
+  "outlier_sample_count": 182,
+  "cleaning_audit": {
+    "actions_taken": [
+      "No missing/invalid values detected."
+    ],
+    "audit_before": {
+      "total_elements": 1065696,
+      "nan_count": 0,
+      "nan_percentage": 0.0,
+      "inf_count": 0,
+      "negative_count": 0,
+      "over_max_count": 0,
+      "is_clean": true
+    }
+  },
+  "saved_artifacts": {
+    "csv": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\cleaned_data\\cleaned_spectral_data.csv",
+    "parquet": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\cleaned_data\\cleaned_spectral_data.parquet"
+  },
+  "status": "SUCCESS"
+}
