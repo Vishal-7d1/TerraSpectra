@@ -34,8 +34,9 @@ class MissingValueHandler:
         total_elements = spectral_matrix.size
         nan_count = int(np.isnan(spectral_matrix).sum())
         inf_count = int(np.isinf(spectral_matrix).sum())
-        negative_count = int((spectral_matrix < self.min_allowed).sum())
-        over_max_count = int((spectral_matrix > self.max_allowed).sum())
+        finite_mask = np.isfinite(spectral_matrix)
+        negative_count = int((finite_mask & (spectral_matrix < self.min_allowed)).sum())
+        over_max_count = int((finite_mask & (spectral_matrix > self.max_allowed)).sum())
 
         return {
             "total_elements": total_elements,

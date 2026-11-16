@@ -44,7 +44,7 @@ def synthetic_spectral_dataframe(tmp_path: Path) -> Path:
 
 
 @pytest.fixture
-def noisy_spectra_with_nans() -> Tuple_data := None:
+def noisy_spectra_with_nans():
     """Creates a raw matrix with deliberate NaNs and sensor noise for unit tests."""
     np.random.seed(101)
     wls = np.linspace(500, 900, 15)

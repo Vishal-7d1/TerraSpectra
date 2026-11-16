@@ -32,6 +32,7 @@ from utils.preprocessing_utils import (
     save_json,
     save_dataframe,
     plot_spectral_comparison,
+    save_figure_safely,
 )
 from loaders.data_loader import HyperspectralDataLoader
 from processors.missing_value_handler import MissingValueHandler
@@ -206,7 +207,7 @@ def run_pipeline(config_path: Path = None) -> bool:
         "noise_reduction": noise_report,
         "normalization": {
             "method": norm_method,
-            "fitted_scaler": str((normalized_dir / "fitted_scaler.joblib").relative_to(MODULE_DIR)),
+            "fitted_scaler": str(normalized_dir / "fitted_scaler.joblib"),
         },
         "quality_control": qc_report,
         "saved_artifacts": {
@@ -240,8 +241,8 @@ def run_pipeline(config_path: Path = None) -> bool:
 
 ## 2. Noise Reduction & Spectral Fidelity
 - **Algorithm:** Savitzky-Golay (Window: {noise_report.get('window_length')}, Poly: {noise_report.get('polyorder')})
-- **Initial Noise Proxy ($\sigma$):** {noise_report.get('initial_noise_proxy_sigma')}
-- **Final Noise Proxy ($\sigma$):** {noise_report.get('final_noise_proxy_sigma')}
+- **Initial Noise Proxy (sigma):** {noise_report.get('initial_noise_proxy_sigma')}
+- **Final Noise Proxy (sigma):** {noise_report.get('final_noise_proxy_sigma')}
 - **Noise Reduction:** **{noise_report.get('noise_reduction_percentage')}%**
 - **Spectral RMSE:** `{qc_report['spectral_fidelity'].get('spectral_rmse')}` (Distortion check: PASSED)
 - **Mean Pearson Correlation with Raw:** `{qc_report['spectral_fidelity'].get('mean_pearson_correlation')}` (> 0.999 fidelity)
@@ -325,7 +326,7 @@ def run_pipeline(config_path: Path = None) -> bool:
         plt.grid(True, linestyle="--", alpha=0.4)
 
         plt.tight_layout()
-        plt.savefig(viz_dir / "03_normalization_methods_comparison.png", dpi=300)
+        save_figure_safely(plt.gcf(), viz_dir / "03_normalization_methods_comparison.png", dpi=300)
         plt.close()
 
         # Plot 4: Preprocessing Summary Dashboard (Class-wise comparison)
@@ -343,7 +344,7 @@ def run_pipeline(config_path: Path = None) -> bool:
         plt.legend(loc="upper left")
         plt.grid(True, linestyle="--", alpha=0.4)
         plt.tight_layout()
-        plt.savefig(viz_dir / "05_preprocessing_summary_dashboard.png", dpi=300)
+        save_figure_safely(plt.gcf(), viz_dir / "05_preprocessing_summary_dashboard.png", dpi=300)
         plt.close()
 
     print("=" * 70)

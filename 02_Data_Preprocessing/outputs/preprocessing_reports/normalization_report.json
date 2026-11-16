@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-11-16T06:48:52.436943",
+  "normalization_method": "snv",
+  "fitted_on_train_only": true,
+  "total_samples": 1632,
+  "total_spectral_bands": 653,
+  "fitted_scaler_path": "outputs\\normalized_data\\fitted_scaler.joblib",
+  "normalized_statistics": {
+    "min": -2.1037,
+    "max": 1.6249,
+    "mean": -0.0,
+    "std": 0.9429
+  },
+  "saved_artifacts": {
+    "csv": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\normalized_data\\normalized_spectral_data.csv",
+    "parquet": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\normalized_data\\normalized_spectral_data.parquet"
+  },
+  "status": "SUCCESS"
+}

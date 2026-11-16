@@ -1,7 +1,7 @@
 {
   "pipeline_name": "TerraSpectra_Hyperspectral_Preprocessing",
-  "execution_timestamp": "2026-11-15T06:47:02.604656",
-  "execution_duration_seconds": 24.06,
+  "execution_timestamp": "2026-11-16T06:53:21.566847",
+  "execution_duration_seconds": 16.32,
   "input_dataset": "data_AgEng_review_paper.xlsx",
   "total_samples": 1632,
   "total_spectral_bands": 653,
@@ -36,7 +36,7 @@
   },
   "normalization": {
     "method": "snv",
-    "fitted_scaler": "outputs\\normalized_data\\fitted_scaler.joblib"
+    "fitted_scaler": "C:\\Users\\Vishal Yadav\\OneDrive\\Desktop\\TerraSpectra\\02_Data_Preprocessing\\outputs\\normalized_data\\fitted_scaler.joblib"
   },
   "quality_control": {
     "overall_status": "PASSED",

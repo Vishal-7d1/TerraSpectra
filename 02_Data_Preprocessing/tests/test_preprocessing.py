@@ -24,7 +24,7 @@ def test_end_to_end_preprocessing_on_synthetic_data(synthetic_spectral_dataframe
             "sample_id_column": "barcode"
         },
         "cleaning": {
-            "enabled": true := True,
+            "enabled": True,
             "handle_missing_values": True,
             "missing_strategy": "linear_spectral_interpolation",
             "detect_duplicates": True,

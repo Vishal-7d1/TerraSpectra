@@ -85,6 +85,20 @@ def save_dataframe(df: pd.DataFrame, base_path_no_ext: Path, save_csv: bool = Tr
     return saved_paths
 
 
+def save_figure_safely(fig, path: Path, dpi: int = 300) -> None:
+    """Saves a matplotlib figure safely with retries against file locks (e.g. OneDrive)."""
+    import time
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    for attempt in range(5):
+        try:
+            fig.savefig(path, dpi=dpi)
+            return
+        except OSError:
+            time.sleep(0.6)
+    fig.savefig(path, dpi=dpi)
+
+
 def plot_spectral_comparison(
     wavelengths: np.ndarray,
     original_spectra: np.ndarray,
@@ -115,7 +129,5 @@ def plot_spectral_comparison(
     plt.tight_layout()
 
     if save_path:
-        save_path = Path(save_path)
-        save_path.parent.mkdir(parents=True, exist_ok=True)
-        plt.savefig(save_path, dpi=300)
+        save_figure_safely(plt.gcf(), save_path, dpi=300)
     plt.close()

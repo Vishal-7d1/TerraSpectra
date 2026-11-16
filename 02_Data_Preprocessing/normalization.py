@@ -24,6 +24,7 @@ from utils.preprocessing_utils import (
     load_config,
     save_json,
     save_dataframe,
+    save_figure_safely,
 )
 from loaders.data_loader import HyperspectralDataLoader
 from processors.spectral_correction import SpectralNormalizer
@@ -118,8 +119,7 @@ def run_normalization(config_path: Path = None) -> bool:
 
         plt.tight_layout()
         viz_path = viz_dir / "03_normalization_methods_comparison.png"
-        viz_path.parent.mkdir(parents=True, exist_ok=True)
-        plt.savefig(viz_path, dpi=300)
+        save_figure_safely(plt.gcf(), viz_path, dpi=300)
         plt.close()
         logger.info(f"Saved normalization comparison plot to: {viz_path}")
 
@@ -130,7 +130,7 @@ def run_normalization(config_path: Path = None) -> bool:
         "fitted_on_train_only": config["normalization"].get("fit_train_only", True),
         "total_samples": len(normalized_df),
         "total_spectral_bands": len(wavelengths),
-        "fitted_scaler_path": str(scaler_save_path.relative_to(MODULE_DIR)),
+        "fitted_scaler_path": str(scaler_save_path),
         "normalized_statistics": {
             "min": round(float(np.min(normalized_matrix)), 4),
             "max": round(float(np.max(normalized_matrix)), 4),
