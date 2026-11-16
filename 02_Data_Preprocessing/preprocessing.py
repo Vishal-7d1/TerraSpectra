@@ -264,14 +264,46 @@ def run_pipeline(config_path: Path = None) -> bool:
 """
     (reports_dir / "preprocessing_report.md").write_text(md_content, encoding="utf-8")
 
-    # Generate Manifest CSV
-    manifest_rows = [
-        {"artifact": "cleaned_spectral_data.csv", "folder": "cleaned_data", "size_bytes": Path(cleaned_paths.get("csv", "")).stat().st_size if cleaned_paths.get("csv") else 0},
-        {"artifact": "cleaned_spectral_data.parquet", "folder": "cleaned_data", "size_bytes": Path(cleaned_paths.get("parquet", "")).stat().st_size if cleaned_paths.get("parquet") else 0},
-        {"artifact": "normalized_spectral_data.csv", "folder": "normalized_data", "size_bytes": Path(normalized_paths.get("csv", "")).stat().st_size if normalized_paths.get("csv") else 0},
-        {"artifact": "normalized_spectral_data.parquet", "folder": "normalized_data", "size_bytes": Path(normalized_paths.get("parquet", "")).stat().st_size if normalized_paths.get("parquet") else 0},
-        {"artifact": "fitted_scaler.joblib", "folder": "normalized_data", "size_bytes": (normalized_dir / "fitted_scaler.joblib").stat().st_size},
+    # Generate Manifest CSV with complete metadata and SHA-256 hashes
+    import hashlib
+
+    def compute_sha256(filepath: Path) -> str:
+        if not filepath.exists():
+            return ""
+        hasher = hashlib.sha256()
+        with open(filepath, "rb") as f:
+            for chunk in iter(lambda: f.read(65536), b""):
+                hasher.update(chunk)
+        return hasher.hexdigest()
+
+    manifest_files = [
+        ("cleaned_spectral_data.csv", cleaned_dir / "cleaned_spectral_data.csv", len(cleaned_df), len(cleaned_df.columns), len(working_wavelengths)),
+        ("cleaned_spectral_data.parquet", cleaned_dir / "cleaned_spectral_data.parquet", len(cleaned_df), len(cleaned_df.columns), len(working_wavelengths)),
+        ("normalized_spectral_data.csv", normalized_dir / "normalized_spectral_data.csv", len(normalized_df), len(normalized_df.columns), len(working_wavelengths)),
+        ("normalized_spectral_data.parquet", normalized_dir / "normalized_spectral_data.parquet", len(normalized_df), len(normalized_df.columns), len(working_wavelengths)),
+        ("fitted_scaler.joblib", normalized_dir / "fitted_scaler.joblib", "N/A", "N/A", "N/A"),
     ]
+
+    manifest_rows = []
+    for fname, fpath, rows, cols, bands in manifest_files:
+        if fpath.exists():
+            sz = fpath.stat().st_size
+            try:
+                rel_path = str(fpath.relative_to(MODULE_DIR.parent))
+            except ValueError:
+                rel_path = str(fpath)
+            manifest_rows.append({
+                "file_name": fname,
+                "folder": fpath.parent.name,
+                "file_path": rel_path,
+                "size_bytes": sz,
+                "size_mb": round(sz / (1024 * 1024), 2),
+                "row_count": rows,
+                "column_count": cols,
+                "spectral_bands": bands,
+                "sha256": compute_sha256(fpath)
+            })
+
     pd.DataFrame(manifest_rows).to_csv(reports_dir / "preprocessing_manifest.csv", index=False)
 
     # -------------------------------------------------------------

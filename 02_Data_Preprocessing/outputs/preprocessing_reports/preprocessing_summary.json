@@ -1,7 +1,7 @@
 {
   "pipeline_name": "TerraSpectra_Hyperspectral_Preprocessing",
-  "execution_timestamp": "2026-11-16T06:53:21.566847",
-  "execution_duration_seconds": 16.32,
+  "execution_timestamp": "2026-11-16T06:54:46.765751",
+  "execution_duration_seconds": 14.44,
   "input_dataset": "data_AgEng_review_paper.xlsx",
   "total_samples": 1632,
   "total_spectral_bands": 653,
