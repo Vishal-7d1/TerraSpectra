@@ -1,0 +1,83 @@
+{
+  "pipeline_name": "TerraSpectra_EDA_Pipeline",
+  "version": "1.0.0",
+  "data_inputs": {
+    "cleaned_data_path": "02_Data_Preprocessing/outputs/cleaned_data/cleaned_spectral_data.parquet",
+    "cleaned_data_csv": "02_Data_Preprocessing/outputs/cleaned_data/cleaned_spectral_data.csv",
+    "normalized_data_path": "02_Data_Preprocessing/outputs/normalized_data/normalized_spectral_data.parquet",
+    "normalized_data_csv": "02_Data_Preprocessing/outputs/normalized_data/normalized_spectral_data.csv",
+    "target_disease_column": "disease",
+    "watering_column": "watering",
+    "cultivar_column": "genotype ID",
+    "species_column": "Plant Species",
+    "sample_id_column": "barcode"
+  },
+  "spectral_regions": {
+    "visible": [450.0, 700.0],
+    "red_edge": [680.0, 750.0],
+    "near_infrared": [750.0, 1300.0],
+    "shortwave_infrared_1": [1300.0, 1900.0],
+    "shortwave_infrared_2": [1900.0, 2400.0]
+  },
+  "vegetation_indices": {
+    "NDVI": {
+      "name": "Normalized Difference Vegetation Index",
+      "formula": "(R800 - R680) / (R800 + R680)",
+      "nir_target_nm": 800.0,
+      "red_target_nm": 680.0
+    },
+    "NDRE": {
+      "name": "Normalized Difference Red Edge",
+      "formula": "(R790 - R720) / (R790 + R720)",
+      "nir_target_nm": 790.0,
+      "re_target_nm": 720.0
+    },
+    "PRI": {
+      "name": "Photochemical Reflectance Index",
+      "formula": "(R531 - R570) / (R531 + R570)",
+      "target1_nm": 531.0,
+      "target2_nm": 570.0
+    },
+    "mSR705": {
+      "name": "Modified Simple Ratio 705",
+      "formula": "(R750 - R445) / (R705 - R445)",
+      "r750_target_nm": 750.0,
+      "r705_target_nm": 705.0,
+      "r445_target_nm": 450.82
+    },
+    "WBI": {
+      "name": "Water Band Index",
+      "formula": "R900 / R970",
+      "r900_target_nm": 900.0,
+      "r970_target_nm": 970.0
+    },
+    "CRI": {
+      "name": "Carotenoid Reflectance Index",
+      "formula": "(1 / R510) - (1 / R550)",
+      "r510_target_nm": 510.0,
+      "r550_target_nm": 550.0
+    }
+  },
+  "statistical_testing": {
+    "alpha": 0.05,
+    "fdr_method": "fdr_bh",
+    "test_method": "welch_t_test"
+  },
+  "pca": {
+    "n_components": 5,
+    "random_state": 42,
+    "use_normalized_data": true
+  },
+  "outlier_detection": {
+    "iqr_multiplier": 2.5,
+    "zscore_threshold": 3.0
+  },
+  "outputs": {
+    "base_output_dir": "03_Exploratory_Data_Analysis/outputs",
+    "save_csv": true,
+    "save_json": true,
+    "save_parquet": true,
+    "generate_plots": true,
+    "plot_dpi": 300
+  }
+}
