@@ -59,16 +59,16 @@ def plot_difference_spectra(diff_df: pd.DataFrame, output_path: Path, dpi: int =
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
 
     # 1. Absolute Difference
-    ax1.plot(wavelengths, abs_diff, color="#1565c0", lw=2.0, label="Absolute Difference $\Delta R = R_{inf} - R_{ctrl}$")
+    ax1.plot(wavelengths, abs_diff, color="#1565c0", lw=2.0, label=r"Absolute Difference $\Delta R = R_{inf} - R_{ctrl}$")
     ax1.axhline(0, color="black", linestyle="--", lw=1.0)
     ax1.axvspan(680, 750, color="gold", alpha=0.18, label="Red-Edge Region")
-    ax1.set_ylabel("Absolute $\Delta$ Reflectance", fontsize=11)
+    ax1.set_ylabel(r"Absolute $\Delta$ Reflectance", fontsize=11)
     ax1.set_title("Difference Spectra (Infected minus Control)", fontsize=12, fontweight="bold")
     ax1.grid(True, linestyle="--", alpha=0.4)
     ax1.legend(loc="upper left", fontsize=9.5)
 
     # 2. Relative Difference (%)
-    ax2.plot(wavelengths, rel_diff, color="#ad1457", lw=2.0, label="Relative Difference $\Delta R_{rel} = (\\Delta R / R_{ctrl}) \\times 100\%$")
+    ax2.plot(wavelengths, rel_diff, color="#ad1457", lw=2.0, label=r"Relative Difference $\Delta R_{rel} = (\Delta R / R_{ctrl}) \times 100\%$")
     ax2.axhline(0, color="black", linestyle="--", lw=1.0)
     ax2.axvspan(680, 750, color="gold", alpha=0.18)
     ax2.set_xlabel("Wavelength (nm)", fontsize=11)
@@ -92,11 +92,11 @@ def plot_wavelength_significance_manhattan(sig_df: pd.DataFrame, output_path: Pa
 
     fig, ax = plt.subplots(figsize=(12, 5))
     ax.scatter(wavelengths, neg_log10_p, c=neg_log10_p, cmap="viridis", s=14, alpha=0.85, edgecolors="none")
-    ax.axhline(threshold_y, color="red", linestyle="--", lw=1.5, label=f"FDR Significance Threshold ($q = 0.05$, $-\log_{{10}}(q) = {threshold_y:.2f}$)")
+    ax.axhline(threshold_y, color="red", linestyle="--", lw=1.5, label=rf"FDR Significance Threshold ($q = 0.05$, $-\log_{{10}}(q) = {threshold_y:.2f}$)")
 
     ax.set_title("Wavelength-Wise Statistical Significance (Welch's t-test with FDR Correction)", fontsize=12, fontweight="bold")
     ax.set_xlabel("Wavelength (nm)", fontsize=11)
-    ax.set_ylabel("$-\log_{10}(\\text{FDR } q\\text{-value})$", fontsize=11)
+    ax.set_ylabel(r"$-\log_{10}(\text{FDR } q\text{-value})$", fontsize=11)
     ax.set_xlim(float(wavelengths.min()), float(wavelengths.max()))
     ax.grid(True, linestyle="--", alpha=0.4)
     ax.legend(loc="upper left", fontsize=10)
@@ -116,9 +116,9 @@ def plot_cohens_d_effect_size_spectrum(sig_df: pd.DataFrame, output_path: Path, 
     ax.axhline(0, color="black", linestyle="--", lw=0.8)
 
     # Conventional Cohen's benchmarks
-    ax.axhline(0.8, color="crimson", linestyle=":", lw=1.2, label="Large Positive Effect ($d \geq 0.8$)")
-    ax.axhline(-0.8, color="crimson", linestyle=":", lw=1.2, label="Large Negative Effect ($d \leq -0.8$)")
-    ax.axhline(0.5, color="orange", linestyle=":", lw=1.0, alpha=0.7, label="Medium Effect ($|d| \geq 0.5$)")
+    ax.axhline(0.8, color="crimson", linestyle=":", lw=1.2, label=r"Large Positive Effect ($d \geq 0.8$)")
+    ax.axhline(-0.8, color="crimson", linestyle=":", lw=1.2, label=r"Large Negative Effect ($d \leq -0.8$)")
+    ax.axhline(0.5, color="orange", linestyle=":", lw=1.0, alpha=0.7, label=r"Medium Effect ($|d| \geq 0.5$)")
     ax.axhline(-0.5, color="orange", linestyle=":", lw=1.0, alpha=0.7)
 
     ax.set_title("Cohen's d Standardized Effect Size Spectrum (Crown Rot Infected vs. Control)", fontsize=12, fontweight="bold")

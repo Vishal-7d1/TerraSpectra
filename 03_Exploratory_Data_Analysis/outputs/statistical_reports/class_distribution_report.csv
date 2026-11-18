@@ -1,0 +1,11 @@
+experimental_factor,category,count,percentage
+disease,Infected,816,50.0
+disease,Control,816,50.0
+watering,Drought,816,50.0
+watering,Well-watered,816,50.0
+cultivar,Aurora,408,25.0
+cultivar,Emu Rock,408,25.0
+cultivar,Trojan,408,25.0
+cultivar,Yitpi,408,25.0
+species,Triticum aestivum,1224,75.0
+species,Triticum durum,408,25.0

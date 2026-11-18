@@ -1,0 +1,16 @@
+column,missing_count,dtype
+Unnamed: 0,0,int64
+barcode,0,object
+Plant Species,0,object
+Replicate,0,int64
+Lane,0,int64
+Position,0,int64
+disease,0,object
+watering,0,object
+genotype ID,0,object
+value,0,object
+swir,0,object
+vnir,0,object
+date-time,0,object
+dead,1459,object
+disease_label_binary,0,int64

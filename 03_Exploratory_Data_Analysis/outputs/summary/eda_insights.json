@@ -1,0 +1,172 @@
+{
+    "execution_metadata": {
+        "pipeline": "TerraSpectra_EDA_Pipeline",
+        "version": "1.0.0",
+        "execution_timestamp": "2026-11-17T20:13:11.995752",
+        "execution_duration_seconds": 20.95,
+        "status": "COMPLETED_SUCCESSFULLY"
+    },
+    "dataset_profile": {
+        "total_observations": 1632,
+        "total_spectral_bands": 653,
+        "total_metadata_columns": 15,
+        "wavelength_min_nm": 450.82,
+        "wavelength_max_nm": 2396.54,
+        "spectral_resolution_avg_nm": 2.98,
+        "estimated_memory_consumption_mb": 9.26
+    },
+    "class_distributions": {
+        "disease": {
+            "Infected": 816,
+            "Control": 816
+        },
+        "watering": {
+            "Drought": 816,
+            "Well-watered": 816
+        },
+        "cultivar": {
+            "Aurora": 408,
+            "Emu Rock": 408,
+            "Trojan": 408,
+            "Yitpi": 408
+        },
+        "species": {
+            "Triticum aestivum": 1224,
+            "Triticum durum": 408
+        }
+    },
+    "global_statistics": {
+        "global_reflectance_mean": 0.12943,
+        "global_reflectance_std": 0.10485,
+        "global_reflectance_min": -0.03887,
+        "global_reflectance_max": 0.50475,
+        "highest_variance_band_nm": 1098.51,
+        "lowest_variance_band_nm": 1933.51,
+        "highest_cv_band_nm": 1933.51,
+        "lowest_cv_band_nm": 724.28
+    },
+    "spectral_characterization": {
+        "total_bands_analyzed": 653,
+        "wavelength_span_nm": [
+            450.82,
+            2396.54
+        ],
+        "nir_plateau_peak_wavelength_nm": 772.17,
+        "green_reflectance_peak_wavelength_nm": 552.91,
+        "regions_evaluated": [
+            "visible",
+            "red_edge",
+            "near_infrared",
+            "shortwave_infrared_1",
+            "shortwave_infrared_2"
+        ]
+    },
+    "disease_discrimination": {
+        "target_disease_evaluated": "Crown Rot (Fusarium pseudograminearum)",
+        "total_bands_tested": 653,
+        "fdr_significant_bands_count": 653,
+        "fdr_significant_bands_percentage": 100.0,
+        "top_positive_diff_wavelengths_nm": [
+            668.55,
+            669.91,
+            671.26,
+            667.2,
+            665.84,
+            672.62,
+            664.49,
+            673.97,
+            663.14,
+            675.33
+        ],
+        "top_negative_diff_wavelengths_nm": [
+            1092.85,
+            1087.19,
+            1098.51,
+            1081.53,
+            1024.88,
+            1104.16,
+            1075.87,
+            1070.21,
+            1064.55,
+            1109.82
+        ],
+        "top_effect_size_wavelengths_nm": [
+            1007.86,
+            1002.18,
+            1013.53,
+            2284.82,
+            2290.4,
+            2279.24,
+            2295.99,
+            1030.55,
+            2273.66,
+            1036.22
+        ],
+        "max_absolute_difference": 0.08108,
+        "max_cohens_d": 0.9291,
+        "scientific_interpretation_note": "Observed spectral variations indicate candidate discriminative regions (e.g. Red-Edge and SWIR water absorption bands) associated with Crown Rot stress; causality is physiological rather than purely spectral."
+    },
+    "vegetation_indices": {
+        "indices_calculated": [
+            "NDVI",
+            "NDRE",
+            "PRI",
+            "mSR705",
+            "WBI",
+            "CRI"
+        ],
+        "indices_count": 6,
+        "top_discriminative_index_by_cohens_d": "mSR705",
+        "top_cohens_d": 1.0835
+    },
+    "correlation_analysis": {
+        "subsampled_band_matrix_shape": [
+            66,
+            66
+        ],
+        "highly_correlated_pairs_count": 1914,
+        "strongest_index_association": "mSR705",
+        "strongest_index_point_biserial_r": -0.4766,
+        "feature_engineering_recommendation": "Severe spectral collinearity detected across adjacent narrow bands (|r| > 0.98); dimensionality reduction or band-selection (e.g. LASSO / Recursive Feature Elimination) is recommended in Module 04."
+    },
+    "outlier_screening": {
+        "total_samples": 1632,
+        "outlier_count_total": 256,
+        "outlier_percentage": 15.69,
+        "auc_outliers_count": 249,
+        "zscore_outliers_count": 9,
+        "auc_bounds": {
+            "q25": 239.5302860812265,
+            "q75": 296.3513702210773,
+            "iqr": 56.82108413985077,
+            "lower_bound": 97.47757573159959,
+            "upper_bound": 438.4040805707042
+        },
+        "outlier_distribution_by_disease": {
+            "Infected": 241,
+            "Control": 15
+        },
+        "preservation_policy": "Non-destructive: Outliers are retained in the master dataset as they likely represent advanced canopy necrosis or drought stress rather than sensor defects."
+    },
+    "pca_dimensionality": {
+        "n_components_fitted": 5,
+        "pc1_explained_variance_pct": 83.21,
+        "pc2_explained_variance_pct": 12.64,
+        "cumulative_variance_top2_pct": 95.85,
+        "total_explained_variance_pct": 99.81,
+        "pc1_dominant_wavelength_nm": 997.47,
+        "pc2_dominant_wavelength_nm": 687.54,
+        "interpretation_note": "PC1 captures general broadband albedo/brightness scattering variations across the canopy; PC2 captures red-edge chlorophyll transitions and water absorption inflections."
+    },
+    "feature_engineering_recommendations": {
+        "collinearity_treatment": "Dimensionality reduction required due to high cross-band redundancy (|r| > 0.98 across adjacent bands).",
+        "top_candidate_vegetation_indices": [
+            "NDRE",
+            "mSR705",
+            "NDVI"
+        ],
+        "key_discriminative_regions": "Red-Edge (680–750 nm) and SWIR water absorption regions exhibit highest effect sizes (Cohen's d > 0.8).",
+        "pca_retention": "Top 3 Principal Components retain >95% cumulative spectral variance.",
+        "leakage_prevention_rule": "Supervised feature selection must strictly be performed inside cross-validation folds in Module 04."
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "global_reflectance_mean": 0.12943,
+    "global_reflectance_std": 0.10485,
+    "global_reflectance_min": -0.03887,
+    "global_reflectance_max": 0.50475,
+    "highest_variance_band_nm": 1098.51,
+    "lowest_variance_band_nm": 1933.51,
+    "highest_cv_band_nm": 1933.51,
+    "lowest_cv_band_nm": 724.28
+}

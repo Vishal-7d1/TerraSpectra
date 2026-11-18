@@ -14,7 +14,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from utils.eda_utils import save_figure_safely
+from utils.eda_utils import save_figure_safely, calculate_auc
 
 
 def plot_dataset_overview_dashboard(metadata_df: pd.DataFrame, config: Dict[str, Any], output_path: Path, dpi: int = 300) -> None:
@@ -105,7 +105,7 @@ def plot_vegetation_indices_distributions(indices_df: pd.DataFrame, metadata_df:
 
 def plot_outlier_auc_distribution(spectral_matrix: np.ndarray, wavelengths: np.ndarray, bounds: Dict[str, float], output_path: Path, dpi: int = 300) -> None:
     """Plots distribution of spectral Area Under Curve (AUC) with 2.5x IQR outlier threshold boundaries."""
-    auc_values = np.trapz(spectral_matrix, wavelengths, axis=1)
+    auc_values = calculate_auc(spectral_matrix, wavelengths, axis=1)
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5))
 
@@ -116,7 +116,7 @@ def plot_outlier_auc_distribution(spectral_matrix: np.ndarray, wavelengths: np.n
     ax1.axvline(bounds["q25"], color="gray", linestyle=":", label="Q1 (25th)")
     ax1.axvline(bounds["q75"], color="gray", linestyle=":", label="Q3 (75th)")
     ax1.set_title("Spectral AUC Distribution with IQR Outlier Bounds", fontsize=11, fontweight="bold")
-    ax1.set_xlabel("Integrated Spectral AUC ($\int R(\lambda) d\lambda$)")
+    ax1.set_xlabel(r"Integrated Spectral AUC ($\int R(\lambda) d\lambda$)")
     ax1.set_ylabel("Observation Count")
     ax1.legend(loc="upper right", fontsize=9)
     ax1.grid(True, linestyle="--", alpha=0.4)

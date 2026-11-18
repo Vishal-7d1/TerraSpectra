@@ -1,0 +1,10 @@
+{
+    "n_components_fitted": 5,
+    "pc1_explained_variance_pct": 83.21,
+    "pc2_explained_variance_pct": 12.64,
+    "cumulative_variance_top2_pct": 95.85,
+    "total_explained_variance_pct": 99.81,
+    "pc1_dominant_wavelength_nm": 997.47,
+    "pc2_dominant_wavelength_nm": 687.54,
+    "interpretation_note": "PC1 captures general broadband albedo/brightness scattering variations across the canopy; PC2 captures red-edge chlorophyll transitions and water absorption inflections."
+}

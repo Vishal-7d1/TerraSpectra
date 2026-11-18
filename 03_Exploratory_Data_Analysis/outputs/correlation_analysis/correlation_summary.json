@@ -1,0 +1,10 @@
+{
+    "subsampled_band_matrix_shape": [
+        66,
+        66
+    ],
+    "highly_correlated_pairs_count": 1914,
+    "strongest_index_association": "mSR705",
+    "strongest_index_point_biserial_r": -0.4766,
+    "feature_engineering_recommendation": "Severe spectral collinearity detected across adjacent narrow bands (|r| > 0.98); dimensionality reduction or band-selection (e.g. LASSO / Recursive Feature Elimination) is recommended in Module 04."
+}

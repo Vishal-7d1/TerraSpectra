@@ -1,0 +1,16 @@
+column_name,data_type,unique_values
+Unnamed: 0,int64,1632
+barcode,object,208
+Plant Species,object,2
+Replicate,int64,13
+Lane,int64,16
+Position,int64,16
+disease,object,2
+watering,object,2
+genotype ID,object,4
+value,object,208
+swir,object,1632
+vnir,object,1632
+date-time,object,1632
+dead,object,2
+disease_label_binary,int64,2

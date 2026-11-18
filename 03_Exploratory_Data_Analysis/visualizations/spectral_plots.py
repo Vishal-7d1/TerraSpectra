@@ -25,9 +25,9 @@ def plot_global_spectral_signature(spectral_matrix: np.ndarray, wavelengths: np.
 
     ax.plot(wavelengths, mean_curve, color="#1b5e20", lw=2.2, label=f"Global Mean Reflectance (N={spectral_matrix.shape[0]:,})")
     ax.fill_between(wavelengths, mean_curve - std_curve, mean_curve + std_curve,
-                    color="#81c784", alpha=0.35, label="$\pm 1\sigma$ Standard Deviation Envelope")
+                    color="#81c784", alpha=0.35, label=r"$\pm 1\sigma$ Standard Deviation Envelope")
     ax.fill_between(wavelengths, mean_curve - 2 * std_curve, mean_curve + 2 * std_curve,
-                    color="#c8e6c9", alpha=0.25, label="$\pm 2\sigma$ Range (95% Variation)")
+                    color="#c8e6c9", alpha=0.25, label=r"$\pm 2\sigma$ Range (95% Variation)")
 
     ax.set_title("TerraSpectra: Global Hyperspectral Reflectance Profile (450 nm – 2400 nm)", fontsize=13, fontweight="bold")
     ax.set_xlabel("Wavelength (nm)", fontsize=11)

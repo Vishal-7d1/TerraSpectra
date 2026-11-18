@@ -1,0 +1,13 @@
+{
+    "indices_calculated": [
+        "NDVI",
+        "NDRE",
+        "PRI",
+        "mSR705",
+        "WBI",
+        "CRI"
+    ],
+    "indices_count": 6,
+    "top_discriminative_index_by_cohens_d": "mSR705",
+    "top_cohens_d": 1.0835
+}

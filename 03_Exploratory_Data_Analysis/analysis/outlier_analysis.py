@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from utils.eda_utils import save_json
+from utils.eda_utils import save_json, calculate_auc
 
 
 class SpectralOutlierDetector:
@@ -28,7 +28,7 @@ class SpectralOutlierDetector:
         """
         Detects spectral outliers using integrated Area Under Curve (AUC) across the full spectrum.
         """
-        auc_values = np.trapz(self.spectral_matrix, self.wavelengths, axis=1)
+        auc_values = calculate_auc(self.spectral_matrix, self.wavelengths, axis=1)
         q25 = np.percentile(auc_values, 25)
         q75 = np.percentile(auc_values, 75)
         iqr = q75 - q25
@@ -74,7 +74,7 @@ class SpectralOutlierDetector:
         outlier_indices = np.where(combined_outliers)[0]
 
         outlier_records = []
-        auc_values = np.trapz(self.spectral_matrix, self.wavelengths, axis=1)
+        auc_values = calculate_auc(self.spectral_matrix, self.wavelengths, axis=1)
 
         for idx in outlier_indices:
             row_dict = {

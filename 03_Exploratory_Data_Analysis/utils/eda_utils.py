@@ -129,6 +129,12 @@ def find_nearest_wavelength(target_nm: float, available_wls: np.ndarray) -> Tupl
     return idx, actual_nm
 
 
+def calculate_auc(y: np.ndarray, x: np.ndarray, axis: int = -1) -> np.ndarray:
+    """Computes Area Under Curve using trapezoidal rule, fully compatible with NumPy 2.x and SciPy."""
+    from scipy.integrate import trapezoid
+    return trapezoid(y, x, axis=axis)
+
+
 def calculate_cohens_d(group1: np.ndarray, group2: np.ndarray) -> float:
     """
     Computes Cohen's d effect size between two independent groups:

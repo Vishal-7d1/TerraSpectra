@@ -1,0 +1,19 @@
+{
+    "total_samples": 1632,
+    "outlier_count_total": 256,
+    "outlier_percentage": 15.69,
+    "auc_outliers_count": 249,
+    "zscore_outliers_count": 9,
+    "auc_bounds": {
+        "q25": 239.5302860812265,
+        "q75": 296.3513702210773,
+        "iqr": 56.82108413985077,
+        "lower_bound": 97.47757573159959,
+        "upper_bound": 438.4040805707042
+    },
+    "outlier_distribution_by_disease": {
+        "Infected": 241,
+        "Control": 15
+    },
+    "preservation_policy": "Non-destructive: Outliers are retained in the master dataset as they likely represent advanced canopy necrosis or drought stress rather than sensor defects."
+}

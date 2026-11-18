@@ -1,0 +1,16 @@
+{
+    "total_bands_analyzed": 653,
+    "wavelength_span_nm": [
+        450.82,
+        2396.54
+    ],
+    "nir_plateau_peak_wavelength_nm": 772.17,
+    "green_reflectance_peak_wavelength_nm": 552.91,
+    "regions_evaluated": [
+        "visible",
+        "red_edge",
+        "near_infrared",
+        "shortwave_infrared_1",
+        "shortwave_infrared_2"
+    ]
+}

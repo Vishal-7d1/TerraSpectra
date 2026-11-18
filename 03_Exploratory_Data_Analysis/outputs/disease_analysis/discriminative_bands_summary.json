@@ -1,0 +1,45 @@
+{
+    "target_disease_evaluated": "Crown Rot (Fusarium pseudograminearum)",
+    "total_bands_tested": 653,
+    "fdr_significant_bands_count": 653,
+    "fdr_significant_bands_percentage": 100.0,
+    "top_positive_diff_wavelengths_nm": [
+        668.55,
+        669.91,
+        671.26,
+        667.2,
+        665.84,
+        672.62,
+        664.49,
+        673.97,
+        663.14,
+        675.33
+    ],
+    "top_negative_diff_wavelengths_nm": [
+        1092.85,
+        1087.19,
+        1098.51,
+        1081.53,
+        1024.88,
+        1104.16,
+        1075.87,
+        1070.21,
+        1064.55,
+        1109.82
+    ],
+    "top_effect_size_wavelengths_nm": [
+        1007.86,
+        1002.18,
+        1013.53,
+        2284.82,
+        2290.4,
+        2279.24,
+        2295.99,
+        1030.55,
+        2273.66,
+        1036.22
+    ],
+    "max_absolute_difference": 0.08108,
+    "max_cohens_d": 0.9291,
+    "scientific_interpretation_note": "Observed spectral variations indicate candidate discriminative regions (e.g. Red-Edge and SWIR water absorption bands) associated with Crown Rot stress; causality is physiological rather than purely spectral."
+}

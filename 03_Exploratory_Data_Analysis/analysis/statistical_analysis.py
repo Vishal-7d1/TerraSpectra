@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from utils.eda_utils import save_json
+from utils.eda_utils import save_json, calculate_auc
 
 
 class SpectralStatisticalAnalyzer:
@@ -91,7 +91,7 @@ class SpectralStatisticalAnalyzer:
         sample_maxs = np.max(self.spectral_matrix, axis=1)
         sample_mins = np.min(self.spectral_matrix, axis=1)
         # Trapezoidal numerical integration for AUC across wavelengths
-        sample_auc = np.trapz(self.spectral_matrix, self.wavelengths, axis=1)
+        sample_auc = calculate_auc(self.spectral_matrix, self.wavelengths, axis=1)
 
         sample_stats_df = pd.DataFrame({
             "sample_index": np.arange(self.num_samples),

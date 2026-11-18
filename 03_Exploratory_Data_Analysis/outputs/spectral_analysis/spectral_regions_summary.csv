@@ -1,0 +1,6 @@
+region_name,wavelength_min_nm,wavelength_max_nm,band_count,mean_reflectance,std_reflectance,min_reflectance,max_reflectance,control_mean,infected_mean,absolute_difference,percentage_difference
+visible,450.0,700.0,187,0.04233,0.02121,0.0,0.31118,0.04632,0.03835,-0.00796,-17.19
+red_edge,680.0,750.0,51,0.12192,0.08618,0.0,0.43885,0.13696,0.10688,-0.03008,-21.96
+near_infrared,750.0,1300.0,233,0.22784,0.09174,-0.03887,0.50475,0.26446,0.19122,-0.07324,-27.7
+shortwave_infrared_1,1300.0,1900.0,107,0.1258,0.07019,0.0,0.4035,0.14821,0.10339,-0.04481,-30.24
+shortwave_infrared_2,1900.0,2400.0,90,0.04949,0.03284,-0.00012,0.14062,0.05908,0.03991,-0.01917,-32.45

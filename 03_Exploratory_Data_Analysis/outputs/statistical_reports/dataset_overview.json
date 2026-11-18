@@ -1,0 +1,44 @@
+{
+    "overview": {
+        "total_observations": 1632,
+        "total_spectral_bands": 653,
+        "total_metadata_columns": 15,
+        "wavelength_min_nm": 450.82,
+        "wavelength_max_nm": 2396.54,
+        "spectral_resolution_avg_nm": 2.98,
+        "estimated_memory_consumption_mb": 9.26
+    },
+    "missing_values": {
+        "spectral_nan_count": 0,
+        "spectral_inf_count": 0,
+        "metadata_missing_counts": {
+            "dead": 1459
+        },
+        "is_completely_clean": false
+    },
+    "duplicate_audit": {
+        "exact_duplicate_rows": 0,
+        "unique_physical_plants_barcodes": 208,
+        "repeated_time_series_scans": 1424
+    },
+    "class_distributions": {
+        "disease": {
+            "Infected": 816,
+            "Control": 816
+        },
+        "watering": {
+            "Drought": 816,
+            "Well-watered": 816
+        },
+        "cultivar": {
+            "Aurora": 408,
+            "Emu Rock": 408,
+            "Trojan": 408,
+            "Yitpi": 408
+        },
+        "species": {
+            "Triticum aestivum": 1224,
+            "Triticum durum": 408
+        }
+    }
+}

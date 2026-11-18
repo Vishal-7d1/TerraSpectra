@@ -1,0 +1,45 @@
+{
+    "NDVI": {
+        "name": "Normalized Difference Vegetation Index",
+        "formula": "(R800 - R680) / (R800 + R680)",
+        "nir_target_nm": 800.0,
+        "nir_actual_nm": 799.65,
+        "red_target_nm": 680.0,
+        "red_actual_nm": 679.4
+    },
+    "NDRE": {
+        "name": "Normalized Difference Red Edge",
+        "formula": "(R790 - R720) / (R790 + R720)",
+        "nir_target_nm": 790.0,
+        "nir_actual_nm": 790.02,
+        "re_target_nm": 720.0,
+        "re_actual_nm": 720.19
+    },
+    "PRI": {
+        "name": "Photochemical Reflectance Index",
+        "formula": "(R531 - R570) / (R531 + R570)",
+        "wl1_target_nm": 531.0,
+        "wl1_actual_nm": 531.58,
+        "wl2_target_nm": 570.0,
+        "wl2_actual_nm": 570.28
+    },
+    "mSR705": {
+        "name": "Modified Simple Ratio 705",
+        "formula": "(R750 - R445) / (R705 - R445)",
+        "r750_actual_nm": 750.24,
+        "r705_actual_nm": 705.21,
+        "r445_actual_nm": 450.82
+    },
+    "WBI": {
+        "name": "Water Band Index",
+        "formula": "R900 / R970",
+        "r900_actual_nm": 899.37,
+        "r970_actual_nm": 969.33
+    },
+    "CRI": {
+        "name": "Carotenoid Reflectance Index",
+        "formula": "(1 / R510) - (1 / R550)",
+        "r510_actual_nm": 510.31,
+        "r550_actual_nm": 550.24
+    }
+}

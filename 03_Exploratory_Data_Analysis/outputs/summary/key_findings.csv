@@ -1,0 +1,8 @@
+Topic,Value,Interpretation
+Total Observations,"1,632",Full dataset preserved without missing samples.
+Spectral Bands,653,Continuous narrow bands from 450.8 to 2396.5 nm.
+Disease Balance,816 Infected / 816 Control,Exact 50:50 class balance.
+Significant Spectral Bands,653 / 653,100.0% of bands significant at FDR q < 0.05.
+Top Discriminative Index,mSR705,Highest separation effect size (Cohen's d = 1.083).
+PCA Dimensionality,PC1+PC2 = 95.85%,Top 2 components explain dominant canopy variance.
+Outlier Observations,256 (15.69%),Retained as biological extremes (advanced necrosis / drought).
