@@ -1,0 +1,59 @@
+{
+  "pipeline_name": "TerraSpectra_Feature_Engineering",
+  "version": "1.0.0",
+  "data_inputs": {
+    "cleaned_data_path": "02_Data_Preprocessing/outputs/cleaned_data/cleaned_spectral_data.parquet",
+    "cleaned_data_csv": "02_Data_Preprocessing/outputs/cleaned_data/cleaned_spectral_data.csv",
+    "normalized_data_path": "02_Data_Preprocessing/outputs/normalized_data/normalized_spectral_data.parquet",
+    "target_column": "disease",
+    "positive_class": "Infected",
+    "negative_class": "Control",
+    "group_column": "barcode",
+    "secondary_factor_columns": ["watering", "genotype ID", "Plant Species"]
+  },
+  "splitting": {
+    "strategy": "stratified_group_split",
+    "train_ratio": 0.70,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "random_state": 42
+  },
+  "extraction": {
+    "enabled_categories": [
+      "vegetation_indices",
+      "derivative_features",
+      "spectral_shape_features",
+      "region_statistical_features"
+    ],
+    "spectral_regions": {
+      "visible": [450.0, 700.0],
+      "red_edge": [680.0, 750.0],
+      "near_infrared": [750.0, 1300.0],
+      "shortwave_infrared_1": [1300.0, 1900.0],
+      "shortwave_infrared_2": [1900.0, 2400.0]
+    },
+    "water_absorption_targets_nm": [1450.0, 1940.0]
+  },
+  "selection": {
+    "variance_threshold": 1e-5,
+    "correlation_threshold": 0.95,
+    "statistical_test": "f_classif",
+    "top_k_statistical": 30,
+    "top_k_mutual_info": 30,
+    "rf_n_estimators": 100,
+    "rf_top_k": 30,
+    "target_selected_features": 35
+  },
+  "dimensionality_reduction": {
+    "pca_n_components": 10,
+    "pca_variance_threshold": 0.98,
+    "random_state": 42
+  },
+  "outputs": {
+    "base_output_dir": "04_Feature_Engineering/outputs",
+    "save_csv": true,
+    "save_parquet": true,
+    "generate_plots": true,
+    "plot_dpi": 300
+  }
+}
