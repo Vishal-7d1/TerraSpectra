@@ -1,0 +1,38 @@
+{
+    "top_features_by_random_forest": [
+        "VI_PRI",
+        "VI_PSRI",
+        "VI_mSR705",
+        "SHAPE_sr_nir_red",
+        "STAT_global_kurtosis",
+        "STAT_swir1_iqr",
+        "STAT_nir_iqr",
+        "STAT_swir2_mean",
+        "VI_CRI",
+        "VI_MCARI"
+    ],
+    "top_features_by_mutual_info": [
+        "VI_PRI",
+        "VI_PSRI",
+        "STAT_nir_std",
+        "SHAPE_peak_wavelength_nm",
+        "VI_mSR705",
+        "STAT_global_skewness",
+        "SHAPE_sr_nir_red",
+        "STAT_nir_iqr",
+        "STAT_global_cv",
+        "STAT_global_kurtosis"
+    ],
+    "top_features_by_f_score": [
+        "VI_PSRI",
+        "VI_mSR705",
+        "SHAPE_sr_nir_red",
+        "STAT_nir_iqr",
+        "STAT_re_std",
+        "STAT_swir1_iqr",
+        "STAT_swir2_mean",
+        "VI_PRI",
+        "STAT_global_kurtosis",
+        "VI_CRI"
+    ]
+}

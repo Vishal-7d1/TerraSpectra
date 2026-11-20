@@ -33,6 +33,8 @@ class SpectralDerivativeExtractor:
     def extract_derivative_features(self) -> Tuple[pd.DataFrame, Dict[str, Any]]:
         """Extracts key morphological derivative metrics per observation."""
         d1, d2 = self.compute_continuous_derivatives()
+        self.d1_matrix = d1
+        self.d2_matrix = d2
 
         # 1. Red-Edge Mask (680 nm to 750 nm)
         re_mask = (self.wavelengths >= 680.0) & (self.wavelengths <= 750.0)

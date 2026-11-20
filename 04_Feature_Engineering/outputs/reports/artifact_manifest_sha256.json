@@ -1,0 +1,114 @@
+{
+    "outputs/extracted_features/engineered_features_only.csv": {
+        "size_bytes": 1486176,
+        "sha256": "3e413f6379831b5f5953affbcf97d4cbaa0b4dfa366187dd693400bfac59e758"
+    },
+    "outputs/extracted_features/engineered_features_only.parquet": {
+        "size_bytes": 709101,
+        "sha256": "bf0deb1578760540ceb07e7c119103a967e451d22a82a4b0bacc077b0bc3deaf"
+    },
+    "outputs/extracted_features/extracted_features.csv": {
+        "size_bytes": 1764590,
+        "sha256": "6fa86ccb9ae5af3496ed6c4da884502bddf81c93c1d0cb7d3224da494b5d0dfd"
+    },
+    "outputs/extracted_features/extracted_features.parquet": {
+        "size_bytes": 779524,
+        "sha256": "737cfac6712b1a5850e5bd5ced879e35826a422488df8477ab9837dc7e04952a"
+    },
+    "outputs/extracted_features/extracted_features_metadata.json": {
+        "size_bytes": 2136,
+        "sha256": "d6bca7263e319677b7cf5b91026e946e70e5c478fbbc0aa425a266d129224e23"
+    },
+    "outputs/selected_features/selected_features.csv": {
+        "size_bytes": 802815,
+        "sha256": "187e9e015958a204a4b73612c3df86d53b04c2a675d761730cc53d4053865cdc"
+    },
+    "outputs/selected_features/selected_features.parquet": {
+        "size_bytes": 318680,
+        "sha256": "72d3a998b727d981bef759e5f40778ff04cea21e2262a228c9f4a180ddac49e8"
+    },
+    "outputs/selected_features/selected_features_only.csv": {
+        "size_bytes": 515325,
+        "sha256": "515cea07d52ade81a6e539fd5b7b92f3a8518dbaa44fa41ef8b7364adf7e4a94"
+    },
+    "outputs/selected_features/selected_features_only.parquet": {
+        "size_bytes": 247490,
+        "sha256": "26473b3d3ccf4605a97e58837d4f8e847f0a2224fdf315797c09a4fcb334fc82"
+    },
+    "outputs/dimensionality_reduction/fitted_pca.joblib": {
+        "size_bytes": 9375,
+        "sha256": "2df278ce62019348f0b94e897bd053fcca386b9042cb85eccc477c12860a9ad3"
+    },
+    "outputs/dimensionality_reduction/reduced_features.csv": {
+        "size_bytes": 612253,
+        "sha256": "5030332f6dc376eda0cd3b2e84051d419354238c9c6f4bc71e0e42967c4aa55b"
+    },
+    "outputs/dimensionality_reduction/reduced_features.parquet": {
+        "size_bytes": 216813,
+        "sha256": "c230325b3718c1c3e23039a3a30df8fc53d09ca751fda88cf3f5f45bc60368de"
+    },
+    "outputs/dimensionality_reduction/reduced_features_only.csv": {
+        "size_bytes": 324763,
+        "sha256": "d8ea5090f82b922b0db250639fd3b7bebe335577687743f4cdc69ae3f138ce0c"
+    },
+    "outputs/dimensionality_reduction/reduced_features_only.parquet": {
+        "size_bytes": 145620,
+        "sha256": "4678d2bbcbf1e106f34fc22af21a4b0744b398f6682ef88392758db835d2c8f6"
+    },
+    "outputs/feature_importance/feature_importance.csv": {
+        "size_bytes": 1037,
+        "sha256": "4f6cbfce5a1eca4e285b759fc7062c460005c8e888878d4c3e358df2ba3f0187"
+    },
+    "outputs/feature_importance/importance_summary.json": {
+        "size_bytes": 886,
+        "sha256": "fd6c772d3b84e3f381b59424d4dc99e30e9e1904accc45cbbd88820cfd963fd7"
+    },
+    "outputs/feature_importance/mutual_information_ranking.csv": {
+        "size_bytes": 654,
+        "sha256": "11749561c2f5d308193e6b629248c5fe6197f9211b69f1fc4c86b713f8d782a1"
+    },
+    "outputs/feature_importance/statistical_f_score_ranking.csv": {
+        "size_bytes": 1024,
+        "sha256": "4f5f79534f0106052370ee934d8ad255cf4477f589715d3b22039047052a90e7"
+    },
+    "outputs/splits/split_assignments.csv": {
+        "size_bytes": 46348,
+        "sha256": "07f326c68466b8037dcf9af199de87bab8b9180885d795699a29c391bd3db3a1"
+    },
+    "outputs/splits/split_metadata.json": {
+        "size_bytes": 1320,
+        "sha256": "318cbd9b1effe9e1dc93abdf42544574740b357a08c6c7d295903c0a4dccf3d8"
+    },
+    "outputs/reports/feature_quality_report.json": {
+        "size_bytes": 655,
+        "sha256": "72becbff4d547e943db5903e211f21f6e669b80279992ff81350675edc9d190b"
+    },
+    "outputs/reports/feature_selection_report.json": {
+        "size_bytes": 739,
+        "sha256": "e301a9ea2163a3a643b11f8e088aa07d965f1d251076d7890afa1fb05f7ebb13"
+    },
+    "outputs/visualizations/engineered_features_correlation_heatmap.png": {
+        "size_bytes": 367978,
+        "sha256": "de90fd22cca527949f203a80eb3adcb0267eb848c23d2ad9ffcab6e5780fd123"
+    },
+    "outputs/visualizations/feature_importance_ranking.png": {
+        "size_bytes": 199181,
+        "sha256": "44ad1662e06a628ff65af75b631d2313247b1f9a01a9ef940317761d52572df2"
+    },
+    "outputs/visualizations/feature_selection_stages_funnel.png": {
+        "size_bytes": 125254,
+        "sha256": "ef346a1bec75244ddecf80621bba01060e19ae7290b0c75af4eab14e9cfacf90"
+    },
+    "outputs/visualizations/pca_scree_and_cumulative_variance.png": {
+        "size_bytes": 206637,
+        "sha256": "741eb6f3d0f793966be63d4aadcba0f54f71e4a560e563955260dfbdc2117a3c"
+    },
+    "outputs/visualizations/selected_features_correlation_heatmap.png": {
+        "size_bytes": 264526,
+        "sha256": "e51d390c201f8e49ec094ba7caddb0d477ed9ecf39b9f5a36f5274fdaaf92b77"
+    },
+    "outputs/visualizations/spectral_derivatives_profile.png": {
+        "size_bytes": 278422,
+        "sha256": "c4a4119379b19a63e7e2a72220d42b8cd285ec33c9275f75b62250c04538de42"
+    }
+}

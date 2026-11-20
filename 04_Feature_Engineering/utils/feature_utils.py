@@ -187,3 +187,6 @@ def compute_sha256(filepath: Path) -> str:
         for chunk in iter(lambda: f.read(65536), b""):
             hasher.update(chunk)
     return hasher.hexdigest()
+
+
+calculate_sha256 = compute_sha256

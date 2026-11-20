@@ -39,6 +39,10 @@ class LeakageFreeStatisticalSelector:
         self.retained_columns = list(ranking["feature"].iloc[:k].values)
         return self
 
+    @property
+    def selected_features_(self) -> Optional[List[str]]:
+        return self.retained_columns
+
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         if self.retained_columns is None:
             raise RuntimeError("Selector must be fitted on training data before transforming.")

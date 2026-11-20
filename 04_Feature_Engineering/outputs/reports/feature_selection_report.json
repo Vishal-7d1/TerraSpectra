@@ -1,0 +1,31 @@
+{
+    "initial_feature_count": 51,
+    "after_variance_filter_count": 42,
+    "variance_dropped_count": 9,
+    "after_correlation_filter_count": 18,
+    "correlation_dropped_count": 24,
+    "final_selected_features_count": 18,
+    "selected_feature_names": [
+        "VI_PRI",
+        "VI_PSRI",
+        "VI_mSR705",
+        "SHAPE_sr_nir_red",
+        "STAT_global_kurtosis",
+        "STAT_swir1_iqr",
+        "STAT_nir_iqr",
+        "STAT_swir2_mean",
+        "VI_CRI",
+        "VI_MCARI",
+        "STAT_vis_std",
+        "STAT_global_cv",
+        "STAT_vis_mean",
+        "STAT_global_skewness",
+        "STAT_re_std",
+        "STAT_nir_std",
+        "STAT_re_mean",
+        "SHAPE_peak_wavelength_nm"
+    ],
+    "pca_components_fitted": 10,
+    "pca_cumulative_variance_top2": 87.49,
+    "pca_cumulative_variance_total": 99.52
+}

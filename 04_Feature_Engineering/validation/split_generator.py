@@ -44,21 +44,23 @@ class StratifiedGroupSplitter:
         # Aggregate unique plants and their disease label
         plants_df = metadata_df[[self.group_col, self.target_col]].drop_duplicates().reset_index(drop=True)
         
-        # 1. First split: Train (70%) vs Temp (30%)
+        # 1. First split: Train vs Temp
         temp_ratio = val_ratio + test_ratio
+        can_stratify_1 = plants_df[self.target_col].value_counts().min() >= 2
         train_plants, temp_plants = train_test_split(
             plants_df,
             test_size=temp_ratio,
-            stratify=plants_df[self.target_col],
+            stratify=plants_df[self.target_col] if can_stratify_1 else None,
             random_state=self.random_state,
         )
 
-        # 2. Second split: Temp into Validation (50% of temp = 15%) and Test (50% of temp = 15%)
+        # 2. Second split: Temp into Validation and Test
         val_sub_ratio = val_ratio / temp_ratio
+        can_stratify_2 = temp_plants[self.target_col].value_counts().min() >= 2
         val_plants, test_plants = train_test_split(
             temp_plants,
             test_size=(1.0 - val_sub_ratio),
-            stratify=temp_plants[self.target_col],
+            stratify=temp_plants[self.target_col] if can_stratify_2 else None,
             random_state=self.random_state,
         )
 

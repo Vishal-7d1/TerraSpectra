@@ -1,0 +1,71 @@
+{
+    "total_samples": 1632,
+    "total_extracted_features": 51,
+    "feature_categories": {
+        "vegetation_indices": [
+            "VI_NDVI",
+            "VI_NDRE",
+            "VI_PRI",
+            "VI_mSR705",
+            "VI_WBI",
+            "VI_CRI",
+            "VI_PSRI",
+            "VI_GNDVI",
+            "VI_MCARI",
+            "VI_SIPI"
+        ],
+        "derivative_features": [
+            "DERIV_REP_wavelength_nm",
+            "DERIV_REP_amplitude",
+            "DERIV_REP_area",
+            "DERIV_green_slope",
+            "DERIV_swir_water_slope_1450",
+            "DERIV_swir_water_slope_1940",
+            "DERIV_red_edge_min_curvature",
+            "DERIV_red_edge_max_curvature"
+        ],
+        "spectral_shape_features": [
+            "SHAPE_total_spectral_auc",
+            "SHAPE_vis_slope",
+            "SHAPE_red_edge_slope",
+            "SHAPE_nir_plateau_mean",
+            "SHAPE_nir_plateau_slope",
+            "SHAPE_water_depth_1450",
+            "SHAPE_water_depth_1940",
+            "SHAPE_sr_nir_red",
+            "SHAPE_sr_nir_green",
+            "SHAPE_peak_reflectance",
+            "SHAPE_peak_wavelength_nm"
+        ],
+        "statistical_features": [
+            "STAT_global_mean",
+            "STAT_global_std",
+            "STAT_global_median",
+            "STAT_global_skewness",
+            "STAT_global_kurtosis",
+            "STAT_global_iqr",
+            "STAT_global_cv",
+            "STAT_vis_mean",
+            "STAT_vis_std",
+            "STAT_vis_iqr",
+            "STAT_re_mean",
+            "STAT_re_std",
+            "STAT_re_iqr",
+            "STAT_nir_mean",
+            "STAT_nir_std",
+            "STAT_nir_iqr",
+            "STAT_swir1_mean",
+            "STAT_swir1_std",
+            "STAT_swir1_iqr",
+            "STAT_swir2_mean",
+            "STAT_swir2_std",
+            "STAT_swir2_iqr"
+        ]
+    },
+    "feature_counts_by_category": {
+        "vegetation_indices_count": 10,
+        "derivative_features_count": 8,
+        "spectral_shape_count": 11,
+        "statistical_features_count": 22
+    }
+}

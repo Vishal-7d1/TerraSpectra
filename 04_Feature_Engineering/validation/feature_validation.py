@@ -55,6 +55,7 @@ class FeatureQualityAuditor:
             "near_constant_features_count": len(near_constant_cols),
             "near_constant_features": near_constant_cols,
             "duplicate_column_names": duplicate_col_names,
+            "is_valid": is_passed,
             "quality_status": "PASSED" if is_passed else "FLAGGED_FOR_TREATMENT",
         }
         return report

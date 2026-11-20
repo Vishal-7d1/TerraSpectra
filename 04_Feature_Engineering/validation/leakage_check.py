@@ -39,6 +39,9 @@ class DataLeakageAuditor:
             "train_val_leakage_count": len(train_val_overlap),
             "train_test_leakage_count": len(train_test_overlap),
             "val_test_leakage_count": len(val_test_overlap),
+            "train_val_overlap": list(train_val_overlap),
+            "train_test_overlap": list(train_test_overlap),
+            "val_test_overlap": list(val_test_overlap),
             "is_completely_isolated": not has_overlap,
             "leakage_status": "PASSED_ZERO_LEAKAGE" if not has_overlap else "FAILED_LEAKAGE_DETECTED",
         }

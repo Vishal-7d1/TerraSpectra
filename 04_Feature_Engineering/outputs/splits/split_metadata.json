@@ -1,0 +1,45 @@
+{
+    "split_audit": {
+        "train": {
+            "total_observations": 1144,
+            "unique_plant_barcodes": 145,
+            "class_counts": {
+                "Infected": 576,
+                "Control": 568
+            },
+            "percentage_of_total": 70.1
+        },
+        "val": {
+            "total_observations": 244,
+            "unique_plant_barcodes": 31,
+            "class_counts": {
+                "Control": 124,
+                "Infected": 120
+            },
+            "percentage_of_total": 14.95
+        },
+        "test": {
+            "total_observations": 244,
+            "unique_plant_barcodes": 32,
+            "class_counts": {
+                "Control": 124,
+                "Infected": 120
+            },
+            "percentage_of_total": 14.95
+        }
+    },
+    "leakage_audit": {
+        "group_column": "barcode",
+        "train_unique_groups": 145,
+        "val_unique_groups": 31,
+        "test_unique_groups": 32,
+        "train_val_leakage_count": 0,
+        "train_test_leakage_count": 0,
+        "val_test_leakage_count": 0,
+        "train_val_overlap": [],
+        "train_test_overlap": [],
+        "val_test_overlap": [],
+        "is_completely_isolated": true,
+        "leakage_status": "PASSED_ZERO_LEAKAGE"
+    }
+}

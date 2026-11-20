@@ -1,0 +1,22 @@
+{
+    "total_samples": 1632,
+    "total_features": 51,
+    "total_missing_values": 0,
+    "columns_with_missing_values": {},
+    "total_infinite_values": 0,
+    "constant_features_count": 0,
+    "constant_features": [],
+    "near_constant_features_count": 7,
+    "near_constant_features": [
+        "DERIV_green_slope",
+        "DERIV_swir_water_slope_1450",
+        "DERIV_swir_water_slope_1940",
+        "DERIV_red_edge_min_curvature",
+        "DERIV_red_edge_max_curvature",
+        "SHAPE_vis_slope",
+        "SHAPE_nir_plateau_slope"
+    ],
+    "duplicate_column_names": [],
+    "is_valid": true,
+    "quality_status": "PASSED"
+}
